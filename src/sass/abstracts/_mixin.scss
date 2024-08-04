@@ -1,0 +1,32 @@
+@use "../abstracts/breakpoints";
+@use "../abstracts/variables";
+
+@mixin flex-row-center {
+  display: flex;
+  align-items: center;
+}
+@mixin flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin text-bold($size: 1rem, $weight: 400, $color: black) {
+  font: {
+    size: $size;
+    weight: $weight;
+  }
+  color: $color;
+}
+
+@mixin maxCap {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @include breakpoints.desktop {
+    max-width: calc(100vw - 10rem);
+  }
+
+  @include breakpoints.tablet {
+    max-width: calc(100vw - 5rem);
+  }
+}

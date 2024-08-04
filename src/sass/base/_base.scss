@@ -1,0 +1,28 @@
+@use '../abstracts';
+@use 'sass:map';
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+a {
+    text-decoration: inherit;
+    color: inherit
+}
+
+button {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row-center {
+    display: flex;
+    align-items: center;
+}
