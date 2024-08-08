@@ -1,0 +1,30 @@
+<p>table works!</p>
+<!-- {{tableQuery.data() | json}} -->
+<table>
+    <tr>
+      @for (column of columns(); track column.field) {
+      <th>{{ column?.headerName || column.field }}</th>
+      }
+    </tr>
+  
+    <!-- @for (row of rows(); track $index) {
+    <tr>
+      @for (key of row | keyvalue; track $index) {
+        @if (key.key === columns[$index].field) {
+        }
+        <td>{{ key.value }} {{$any(row[columns[$index].field])}}</td>
+      }
+    </tr>
+    } -->
+    @for (data of tableData(); track $index) {
+        <tr>
+            @for (column of columns(); track $index) {
+                <td>
+                  {{ getCellData(column, data)}} 
+                </td>
+            }
+          
+        </tr>
+
+    }
+</table>
