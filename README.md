@@ -1,27 +1,54 @@
 # TableTalk
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
+TableTalk is an Angular application that displays data in a tabular format.
 
-## Development server
+## Installation
+```bash
+   git clone https://github.com/RanafaB18/TableTalk.git
+   cd TableTalk
+   npm install
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Using the Table component
+To use the table component in your Angular application, you need to define columns of type 
+**ColumnDefinition**
+ and provide the data as rows. The 
+**ColumnDefinition**
+ interface has the following properties:
+ * **field**: (required): The key or property name of the data object that should be displayed in the column. If the headerName is not specified, the field name will also be used for the column name.
+* **headerName**
+ (optional): The header text to display for the column.
 
-## Code scaffolding
+* **valueFormatter**` (optional): When defined, it is only used to render the content of the cells.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* **valueGetter**
+ (optional): Figuring out what it could be used for.
 
-## Build
+Here is an example
+```typescript
+import { ColumnDefinition } from 'src/features/table/models/table.types';
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+// Define your columns
+const columns: ColumnDefinition[] = [
+  { field: 'name', headerName: 'Product Name' },
+  { field: 'price', headerName: 'Price', valueFormatter: (params) => `$${params.price}` },
+  // Add more columns as needed
+];
 
-## Running unit tests
+// Provide your data as rows
+const rows = [
+  { name: 'Product 1', price: 9.99 },
+  { name: 'Product 2', price: 14.99 },
+  // Add more rows as needed
+];
+```
+In the example above, the 
+valueFormatter function is used to format the 
+price column by prepending a dollar sign ($) to the value.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Then, in your component's template, you can use the table component like this:
+```typescript
+    <app-table [columns]="columns" [rows]="rows"></app-table>
+```
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Built with Angular
