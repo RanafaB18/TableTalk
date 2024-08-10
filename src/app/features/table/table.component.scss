@@ -1,1 +1,40 @@
+@use "../../../sass/abstracts" as *;
 
+.table-cmp {
+  padding: 2rem;
+  &__container {
+    overflow-x: auto;
+  }
+
+  &__title {
+    margin-bottom: .5rem;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th,
+    td {
+      padding: 0.5rem;
+      text-align: left;
+      border: 1px solid #ddd;
+      max-width: 8rem;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    td {
+      border-right: 1px solid #ddd;
+    }
+  }
+
+  @include phone-lg {
+    padding: 1rem;
+    th {
+      min-width: 8rem;
+    }
+  }
+}

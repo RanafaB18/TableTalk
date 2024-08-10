@@ -8,6 +8,8 @@ export interface Product {
   date_added: Date | string;
 }
 
+export type Sort = 'Asc' | 'Desc' | 'Rand';
+
 export interface ApiResponse<T> {
     data: T[];
     total: number;

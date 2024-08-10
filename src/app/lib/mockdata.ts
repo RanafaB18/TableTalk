@@ -4,7 +4,7 @@ export const mockTableData: ApiResponse<Product> = {
   data: [
     {
       id: 1,
-      name: 'Product A',
+      name: 'Product AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
       price: 19.99,
       category: 'Electronics',
       stock: 123,

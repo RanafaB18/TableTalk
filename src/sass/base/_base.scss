@@ -26,3 +26,9 @@ button {
     display: flex;
     align-items: center;
 }
+
+.truncate {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}

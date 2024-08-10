@@ -1,0 +1,25 @@
+article {
+    position: relative;
+
+    .sort-btn {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        transform: rotate(90deg);
+        padding: .2rem;
+        border-radius: 50%;
+        color: #c1c1c1;
+
+        &--desc {
+            transform: rotate(-90deg);
+        }
+        &--active {
+            color: #7e7e7e;
+        }
+        &:hover {
+            background-color: #dadada;
+        } 
+    }
+    
+}
