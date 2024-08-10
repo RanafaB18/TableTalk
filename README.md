@@ -1,6 +1,6 @@
 # TableTalk
 
-TableTalk is an Angular application that displays data in a tabular format.
+TableTalk is an Angular application that displays data in a tabular format and allows the user to sort by any of the columns.
 
 ## Installation
 ```bash
@@ -51,4 +51,5 @@ Then, in your component's template, you can use the table component like this:
     <app-table [columns]="columns" [rows]="rows"></app-table>
 ```
 
-## Built with Angular
+### Built with Angular
+By Baba Abdul-Raziq
